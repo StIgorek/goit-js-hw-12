@@ -19,10 +19,13 @@
     </form>
 
     <section class="container">
-      <span class="js-loader"></span>
       <ul class="gallery js-gallery"></ul>
+      <button class="load-more-button js-load-more-button is-hidden" type="button">
+        Load more
+      </button>
+      <span class="js-loader is-hidden"></span>
     </section>
     
-    <script type="module" src="./main.js"></script>
+    <script type="module" defer src="./main.js"></script>
   </body>
 </html>
