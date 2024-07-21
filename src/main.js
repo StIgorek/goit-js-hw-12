@@ -37,7 +37,7 @@ async function handlerSearch(event) {
             hideButton();
         }
     } catch (error) {
-        noImagesError;
+        noImagesError();
     } finally {
         refs.searchForm.reset();
     }
