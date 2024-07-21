@@ -8,6 +8,7 @@ async function handlerSearch(event) {
     event.preventDefault();
 
     refs.gallery.innerHTML = "";
+    searchParams.page = 1;
     
     const form = event.currentTarget;
     searchParams.q = form.elements.searchtext.value.toLowerCase().trim();
@@ -55,16 +56,15 @@ async function handlerLoadMore() {
 
         refs.gallery.insertAdjacentHTML("beforeend", renderPictures(hits));
         lightbox.refresh();
-        scrollGalerryCard();
-
+        scrollGalerryCard();      
+    } catch (error) {
+        noImagesError();
+    } finally {
         if (searchParams.page === searchParams.maxPage) {
             hideButton();
             endSearchMessage();
             refs.loadMoreBtn.removeEventListener("click", handlerLoadMore);
         }
-        
-    } catch (error) {
-        noImagesError;
-    } finally {}
+    }
 }
 
