@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "https://pixabay.com";
-const ENDPOINT = "api";
-axios.defaults.baseURL = BASE_URL;
+//const BASE_URL = "https://pixabay.com";
+//const ENDPOINT = "api";
+//axios.defaults.baseURL = BASE_URL;
 
 const searchParams = {
     key: "44853639-2309de7343cad235f23b575f4",
@@ -16,7 +16,7 @@ const searchParams = {
 };
 
 async function getPictures() {
-    const response = await axios.get(ENDPOINT, {params: searchParams});
+    const response = await axios.get("https://pixabay.com/api/", {params: searchParams});
         return response.data;
 }
 

@@ -14,7 +14,7 @@ async function handlerSearch(event) {
 
     if (!searchParams.q) {
         noRequestError();
-        hideButton();
+        //hideButton();
         return;
     }
 
@@ -56,14 +56,15 @@ async function handlerLoadMore() {
         refs.gallery.insertAdjacentHTML("beforeend", renderPictures(hits));
         lightbox.refresh();
         scrollGalerryCard();
-    } catch (error) {
-        noImagesError;
-    } finally {
+
         if (searchParams.page === searchParams.maxPage) {
             hideButton();
             endSearchMessage();
             refs.loadMoreBtn.removeEventListener("click", handlerLoadMore);
         }
-    }
+        
+    } catch (error) {
+        noImagesError;
+    } finally {}
 }
 
