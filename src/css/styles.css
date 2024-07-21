@@ -138,6 +138,10 @@ a {
   cursor: pointer;
 }
 
+.load-more-button:hover {
+  background: #6C8CFF;
+}
+
 .is-hidden {
   display: none;
 }
